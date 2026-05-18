@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/401f019805.js" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+  <script src="movies.js"></script>
+</head>
+
+<body id="movies__body">
+  <section>
+    <nav>
+      <div class="nav__container">
+        <a href="index.html">
+          <h1 class="logo">
+            Film Index
+          </h1>
+        </a>
+        <ul class="nav__links">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="movies.html" class="nav__link">Movies</a></li>
+          <li><a class="nav__link nav__link--primary no-cursor">Contact</a></li>
+        </ul>
+        <button class="btn__menu" onclick="openMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="menu__backdrop">
+          <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+            <i class="fas fa-times"></i>
+          </button>
+          <ul class="menu__links">
+            <li class="menu__list">
+              <a href="index.html" class="menu__link" onclick="closeMenu()">Home</a>
+            </li>
+            <li class="menu__list">
+              <a href="movies.html" class="menu__link" onclick="closeMenu()">Movies</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link no-cursor" onclick="closeMenu()">Contacts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <main id="movies__main">
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="movies__header">
+            <h2 class="section__title movies__header--title">
+              Discover New Movies
+            </h2>
+            <select id="filter" onchange="sortMovies(event)">
+              <option value="" disabled selected>Sort by</option>
+              <option value="A_TO_Z">Alphabetical: A to Z</option>
+              <option value="Z_TO_A">Alphabetical: Z to A</option>
+              <option value="NEWEST_TO_OLDEST">Newest to Oldest</option>
+              <option value="OLDEST_TO_NEWEST">Oldest to Newest</option>
+            </select>
+          </div>
+          <form action="" onsubmit="searchMovies(event)">
+            <div class="search__bar--container">
+              <div class="search__bar">
+                <input type="text" class="search__input" placeholder="Search for movies by title">
+              </div>
+            </div>
+          </form>
+          <div class="movie__list">
+            <i class="fa-solid fa-spinner movies__loading--spinner"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row row__column">
+        <a href="index.html">
+          <h1 class="logo">
+            Film Index
+          </h1>
+        </a>
+        <div class="footer__list">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="movies.html" class="footer__link">Movies</a>
+          <a class="footer__link no-cursor">Contact</a>
+        </div>
+        <div class="footer__copyright">Copyright &copy; 2026 Joshua Tobler</div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
