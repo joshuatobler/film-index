@@ -1,8 +1,3 @@
-// Data requests: http://www.omdbapi.com/?apikey=46f9dc4d&
-// Poster API requests: http://img.omdbapi.com/?apikey=46f9dc4d&
-
-// console.log(fetch('http://www.omdbapi.com/?apikey=46f9dc4d&'));
-
 let currentMovies = [];
 
 function searchMovies(event) {
@@ -19,7 +14,7 @@ async function queryMovies(searchTerm) {
 
   moviesWrapper.classList += ' movies__loading';
 
-  const res = await fetch(`http://www.omdbapi.com/?apikey=46f9dc4d&s=${searchTerm}`);
+  const res = await fetch(`https://www.omdbapi.com/?apikey=46f9dc4d&s=${searchTerm}`);
   const data = await res.json();
 
   moviesWrapper.classList.remove('movies__loading');
